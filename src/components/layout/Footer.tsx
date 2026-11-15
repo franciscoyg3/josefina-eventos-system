@@ -17,7 +17,6 @@ const Footer = async () => {
       <footer className="bg-background">
         <Separator />
         <div className="mx-auto grid max-w-5xl gap-10 px-6 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
-          {/* Marca */}
           <div className="flex flex-col justify-between gap-8">
             <div className="space-y-4">
               <h2 className="font-serif text-2xl text-[#8a7226]">
@@ -35,7 +34,7 @@ const Footer = async () => {
             </p>
           </div>
 
-          {/* Navegação */}
+          {/* Navigation */}
           <nav aria-label="Navegação do rodapé" className="space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Navegação
@@ -54,8 +53,8 @@ const Footer = async () => {
             </ul>
           </nav>
 
-          {/* Contacto */}
-          <div id="#contacs" className="space-y-4">
+          {/* Contact */}
+          <div id="contacts" className="space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Contacto
             </h3>

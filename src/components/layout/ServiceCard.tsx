@@ -8,17 +8,17 @@ const cormorant = Cormorant_Garamond({
 });
 
 export default function ServiceCard({
-  image,
+  src,
   alt,
   title,
   description,
   href,
 }: ServiceCardProps) {
   return (
-    <article className="group flex w-full max-w-sm flex-col overflow-hidden border border-[#a68f2e]/30 bg-[#fcfafa] transition-shadow duration-300 hover:shadow-lg">
+    <article className="group flex w-full max-w-sm flex-col overflow-hidden border border-gold/30 bg-surface transition-shadow duration-300 hover:shadow-lg">
       <div className="relative aspect-4/3 overflow-hidden">
         <Image
-          src={image}
+          src={src}
           alt={alt}
           fill
           sizes="(max-width: 768px) 100vw, 384px"
@@ -31,13 +31,13 @@ export default function ServiceCard({
           {title}
         </h3>
 
-        <p className="mt-4 flex-1 text-sm leading-7 text-slate-500">
+        <p className="mt-4 flex-1 text-sm leading-7 text-neutral-600">
           {description}
         </p>
 
         <Link
           href={href}
-          className="mt-6 inline-flex items-center gap-1 text-xs tracking-wide text-[#8a7226] transition-colors hover:text-[#a68f2e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a68f2e]"
+          className="mt-6 inline-flex items-center gap-1 text-xs tracking-wide text-[#a68f2e] transition-colors hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
         >
           Detalhes <span aria-hidden>→</span>
         </Link>
