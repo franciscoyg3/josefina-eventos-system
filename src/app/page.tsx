@@ -37,7 +37,7 @@ const item: Variants = {
 }
 
 export default function Home() {
-  const images = [
+  const carouselImages = [
     {
       src: "/images/carousel/evento1.jpg",
       alt: "Photo of tree African women.",
@@ -155,7 +155,7 @@ export default function Home() {
         </motion.p>
         <Carousel opts={{ loop: true }}>
           <CarouselContent>
-            {images.map((img, index) => (
+            {carouselImages.map((img, index) => (
               <CarouselItem key={img.src}>
                 <Image
                   src={img.src}
