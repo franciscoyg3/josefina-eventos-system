@@ -98,7 +98,7 @@ export default function Home() {
       <Hero
         title="Celebrações Inesquecíveis Elegância Intemporal"
         description="Descubra o refúgio ideal para os momentos mais importantes da sua vida. Um espaço desenhado com precisão arquitetónica e hospitalidade de excelência para casamentos e eventos corporativos de prestígio."
-        src="/images/0hero.jpg"
+        src="/videos/hero-video2.mp4"
       />
       <motion.section
         variants={container}
@@ -138,7 +138,7 @@ export default function Home() {
         className="mx-auto w-full max-w-3xl px-12 py-12"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-80px" }}
+        viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1
@@ -176,7 +176,7 @@ export default function Home() {
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px" }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className={`${cormorant.className} text-4xl text-[#a68f2e] md:text-5xl`}
         >
@@ -187,7 +187,7 @@ export default function Home() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, margin: "-80px" }}
+          viewport={{ once: false, amount: 0.2 }}
           className="mt-12 grid justify-items-center gap-8 md:grid-cols-2"
         >
           {services.map((serv) => (
@@ -211,7 +211,7 @@ export default function Home() {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, margin: "-80px" }}
+        viewport={{ once: false, amount: 0.2 }}
         className="flex flex-col items-center justify-center text-center gap-5 my-20"
       >
         <motion.h1
