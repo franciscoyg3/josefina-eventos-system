@@ -30,9 +30,9 @@ const Header = () => {
     return (
       <header className="w-full bg-background">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-          {/* Luzia Logo */}
+          {/* Josefina Logo */}
           <Link href="/" className="font-serif text-2xl text-[#8a7226]">
-            Luzia Eventos
+            Josefina Eventos
           </Link>
 
           {/* Navigation (desktop) */}
@@ -93,7 +93,7 @@ const Header = () => {
             <SheetContent side="right" className="w-72">
               <SheetHeader>
                 <SheetTitle className="font-serif text-2xl font-normal text-[#8a7226]">
-                  Luzia Eventos
+                  Josefina Eventos
                 </SheetTitle>
               </SheetHeader>
 

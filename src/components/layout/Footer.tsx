@@ -20,7 +20,7 @@ const Footer = async () => {
           <div className="flex flex-col justify-between gap-8">
             <div className="space-y-4">
               <h2 className="font-serif text-2xl text-[#8a7226]">
-                Luzia Eventos
+                Josefina Eventos
               </h2>
               <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
                 Onde a elegância encontra a perfeição. O seu parceiro de
@@ -29,7 +29,7 @@ const Footer = async () => {
             </div>
 
             <p className="max-w-xs text-xs text-muted-foreground/80">
-              © {new Date().getFullYear()} Luzia Eventos. Desenvolvido por
+              © {new Date().getFullYear()} Josefina Eventos. Desenvolvido por
               Cláudio Francisco.
             </p>
           </div>
@@ -66,10 +66,10 @@ const Footer = async () => {
               </p>
               <p>
                 <a
-                  href="mailto:luzia_eventos@gmail.com"
+                  href="mailto:josefina_eventos@gmail.com"
                   className="transition-colors hover:text-foreground"
                 >
-                  luzia_eventos@gmail.com
+                  josefina_eventos@gmail.com
                 </a>
               </p>
               <p>

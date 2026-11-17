@@ -114,7 +114,7 @@ export default function Home() {
           variants={item}
           className={`${cormorant.className} mt-6 text-4xl text-[#a68f2e] md:text-5xl`}
         >
-          Bem-vindo à Luzia Eventos
+          Bem-vindo à Josefina Eventos
         </motion.h2>
 
         <motion.div
@@ -126,7 +126,7 @@ export default function Home() {
           variants={item}
           className="max-w-xl text-sm leading-7 text-neutral-600"
         >
-          A Luzia Eventos posiciona-se como um santuário para as celebrações
+          A Josefina Eventos posiciona-se como um santuário para as celebrações
           mais significativas. O nosso compromisso com a hospitalidade
           intemporal e o luxo discreto garante que cada detalhe do seu evento
           seja tratado com a máxima dedicação e profissionalismo. Oferecemos um
