@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Cormorant_Garamond } from "next/font/google";
-import type { ServiceCardProps } from "@/types/cardServiceType";
+import type { ServiceCardProps } from "@/types/ServiceCardPropsType";
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],

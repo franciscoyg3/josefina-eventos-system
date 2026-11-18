@@ -29,14 +29,15 @@ export default function Hero ( {
     title,
     description,
     src,
-    variant = "full"
+    variant = "full",
+    poster
 }: HeroProps ) {
     const isFull = variant == "full";
 
     return (
       <div
       className={`relative flex items-center overflow-hidden px-6 md:px-22 ${
-        isFull ? "h-[calc(100svh-70px)]" : "h-[40svh] min-h-70"
+        isFull ? "h-[calc(100svh-70px)]" : "h-[50svh] min-h-70"
       }`}
     >
       <video
@@ -44,7 +45,7 @@ export default function Hero ( {
         muted
         loop
         playsInline
-        poster="/images/hero/0hero.jpg"
+        poster={poster}
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src={src} type="video/mp4" />

@@ -6,7 +6,7 @@ import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import ServiceCard from "@/components/layout/ServiceCard";
 import Hero from "../components/layout/Hero";
-import type { ServiceCardProps } from "@/types/cardServiceType";
+import type { ServiceCardProps } from "@/types/ServiceCardPropsType";
 import {
   Carousel,
   CarouselContent,
@@ -99,6 +99,7 @@ export default function Home() {
         title="Celebrações Inesquecíveis Elegância Intemporal"
         description="Descubra o refúgio ideal para os momentos mais importantes da sua vida. Um espaço desenhado com precisão arquitetónica e hospitalidade de excelência para casamentos e eventos corporativos de prestígio."
         src="/videos/hero-video1.mp4"
+        poster="/images/hero/0hero.jpg"
       />
       <motion.section
         variants={container}
