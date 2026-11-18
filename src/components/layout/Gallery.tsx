@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-
-type GalleryImage = { src: string; alt: string };
+import type { GalleryImage } from "@/types/galleryImageType";
 
 export default function Gallery({ images }: { images: GalleryImage[] }) {
   const [active, setActive] = useState<GalleryImage | null>(null);
