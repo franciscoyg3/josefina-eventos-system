@@ -40,19 +40,19 @@ export default function Home() {
   const carouselImages = [
     {
       src: "/images/carousel/evento1.jpg",
-      alt: "Photo of tree African women.",
+      alt: "Imagem de 3 mulheres Africanas.",
       width: 700,
       height: 500,
     },
     {
       src: "/images/carousel/evento2.jpg",
-      alt: "Photo of a married couple.",
+      alt: "Imagem de um casal.",
       width: 700,
       height: 500,
     },
     {
       src: "/images/carousel/evento3.jpeg",
-      alt: "Photo of a married couple, drinking.",
+      alt: "Brinde de um casal.",
       width: 700,
       height: 500
     },
