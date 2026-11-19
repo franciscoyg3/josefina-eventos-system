@@ -1,20 +1,11 @@
 "use client";
 
-/**
- 1 - O que pôr abaixo, para a página ter razão de existir
-
- X A história da Josefina Eventos, em texto e foto lado a lado, alternando os lados.
- X Números ou diferenciais (capacidade, anos de experiência, eventos realizados).
- - Uma galeria pequena do espaço.
- - Um CTA final (“Reservar o seu evento”).
- 
- */
-
-
+import type { GalleryImage } from "@/types/galleryImageType";
 import { motion, type Variants } from "motion/react";
 import { Cormorant_Garamond } from "next/font/google";
 import Image from "next/image";
 import Hero from "@/components/layout/Hero";
+import Gallery from "@/components/layout/Gallery";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -56,7 +47,70 @@ export default function AboutPage() {
       label: "Clientes satisfeitos",
       description: "Famílias e empresas que voltam e nos recomendam.",
     },
-  ]
+  ];
+
+  const galleryImages: GalleryImage[] = [
+    {
+      src: "/images/gallery/7.jpg",
+      alt: "Convidados a celebrar na pista de dança",
+      category: "Festas",
+    },
+    {
+      src: "/images/gallery/3.jpg",
+      alt: "Noivos a posar com um convidado de honra",
+      category: "Casamentos",
+    },
+    {
+      src: "/images/gallery/10.jpg",
+      alt: "Mesa de catering com copos e decoração",
+      category: "Catering",
+    },
+    {
+      src: "/images/gallery/1.jpg",
+      alt: "DJ a actuar com os pratos em primeiro plano",
+      category: "Festas",
+    },
+    {
+      src: "/images/gallery/9.jpg",
+      alt: "Mesa de bolo com decoração em tons azuis",
+      category: "Festas",
+    },
+    {
+      src: "/images/gallery/5.jpg",
+      alt: "Convidados a dançar sob luzes coloridas",
+      category: "Festas",
+    },
+    {
+      src: "/images/gallery/11.jpg",
+      alt: "Brinde com taças durante a celebração",
+      category: "Catering",
+    },
+    {
+      src: "/images/gallery/4.jpg",
+      alt: "Casal de noivos no salão",
+      category: "Casamentos",
+    },
+    {
+      src: "/images/gallery/8.jpg",
+      alt: "Momento animado entre convidados",
+      category: "Festas",
+    },
+    {
+      src: "/images/gallery/2.jpg",
+      alt: "Grupo de convidados a conviver",
+      category: "Festas",
+    },
+    {
+      src: "/images/gallery/6.jpg",
+      alt: "Festa com iluminação vibrante e convidados a sorrir",
+      category: "Festas",
+    },
+    {
+      src: "/images/gallery/12.jpg",
+      alt: "Celebração de Festa de Casal",
+      category: "Casamentos"
+    }
+  ];
 
   return (
     <main>
@@ -148,6 +202,34 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </div>
+        </motion.div>
+      </section>
+      <section className="bg-[#fcfafa] py-20">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mx-auto max-w-6xl px-6"
+        >
+          <motion.div
+            variants={item}
+            className="mb-12 flex flex-col items-center text-center"
+          >
+            <h2
+              className={`${cormorant.className} mt-4 text-4xl text-[#a68f2e] md:text-5xl`}
+            >
+              Momentos que ficam
+            </h2>
+            <div className="my-6 w-12 border-b border-[#a68f2e]" />
+            <p className="max-w-xl text-sm leading-7 text-neutral-600">
+              Um olhar sobre as celebrações que já viveram no nosso salão.
+            </p>
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Gallery images={galleryImages} />
+          </motion.div>
         </motion.div>
       </section>
     </main>
