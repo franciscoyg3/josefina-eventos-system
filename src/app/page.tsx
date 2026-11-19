@@ -107,10 +107,6 @@ export default function Home() {
         whileInView="show"
         className="mx-auto flex max-w-6xl flex-col items-center px-6 py-20 text-center"
       >
-        <motion.span variants={item} className="text-xl text-[#8a7226]">
-          &#9670;
-        </motion.span>
-
         <motion.h2
           variants={item}
           className={`${cormorant.className} mt-6 text-4xl text-[#a68f2e] md:text-5xl`}
