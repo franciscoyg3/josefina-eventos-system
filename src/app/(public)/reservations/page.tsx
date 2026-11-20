@@ -1,9 +1,19 @@
-const Reservations = () => {
-  return (
-    <div>
+"use client";
 
-    </div>
-);
+import { Calendar } from "@/components/ui/calendar";
+import { useState } from "react";
+
+const Reservations = () => {
+  const [date, setDate] = useState<Date | undefined>(new Date())
+
+  return (
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      className="rounded-lg border"
+    />
+  )
 }
 
 export default Reservations;
