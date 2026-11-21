@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Cormorant_Garamond } from "next/font/google";
 import type { ServiceCardProps } from "@/types/ServiceCardPropsType";
 const cormorant = Cormorant_Garamond({
@@ -12,7 +11,6 @@ export default function ServiceCard({
   alt,
   title,
   description,
-  href,
 }: ServiceCardProps) {
   return (
     <article className="group flex w-full max-w-sm flex-col overflow-hidden border border-gold/30 bg-surface transition-shadow duration-300 hover:shadow-lg">
@@ -34,13 +32,6 @@ export default function ServiceCard({
         <p className="mt-4 flex-1 text-sm leading-7 text-neutral-600">
           {description}
         </p>
-
-        <Link
-          href={href}
-          className="mt-6 inline-flex items-center gap-1 text-xs tracking-wide text-[#a68f2e] transition-colors hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-        >
-          Detalhes <span aria-hidden>→</span>
-        </Link>
       </div>
     </article>
   );

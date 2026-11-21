@@ -3,5 +3,4 @@ export type ServiceCardProps = {
   alt: string;
   title: string;
   description: string;
-  href: string;
 };

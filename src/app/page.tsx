@@ -65,7 +65,6 @@ export default function Home() {
       title: "Catering",
       description:
         "Menus elaborados com ingredientes frescos e apresentação cuidada, desde cocktails e buffets a jantares volantes, adaptados ao tema e ao número de convidados.",
-      href: "/servicos/catering",
     },
     {
       src: "/images/services/decoracao.jpg",
@@ -73,7 +72,6 @@ export default function Home() {
       title: "Decoração",
       description:
         "Ambientes pensados ao detalhe, com flores, iluminação e mobiliário que dão vida ao conceito do seu evento e criam uma atmosfera inesquecível.",
-      href: "/servicos/decoracao",
     },
     {
       src: "/images/services/aluguer.jpg",
@@ -81,7 +79,6 @@ export default function Home() {
       title: "Aluguer do Espaço",
       description:
         "Salões amplos e versáteis, desenhados para acomodar desde reuniões intimistas a grandes galas corporativas e casamentos, com acústica e iluminação premium.",
-      href: "/servicos/aluguer",
     },
     {
       src: "/images/services/fotografia.jpg",
@@ -89,7 +86,6 @@ export default function Home() {
       title: "Fotografia e Filmagens",
       description:
         "Registamos cada momento importante com um olhar artístico, entregando fotografias e vídeos que preservam a emoção da sua celebração para sempre.",
-      href: "/servicos/fotografia",
     },
   ];
 
@@ -198,7 +194,6 @@ export default function Home() {
                 alt={serv.alt}
                 title={serv.title}
                 description={serv.description}
-                href={serv.href}
               />
             </motion.div>
           ))}
