@@ -4,8 +4,10 @@ import { Calendar } from "@/components/ui/calendar";
 import Hero from "@/components/layout/Hero";
 import { useState } from "react";
 
-const Reservations = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date())
+export const dynamic = "force-dynamic";
+
+export default function Reservations () {
+  const [date, setDate] = useState<Date | undefined>(undefined);
 
   return (
     <main>
@@ -25,5 +27,3 @@ const Reservations = () => {
     </main>
   );
 }
-
-export default Reservations;
