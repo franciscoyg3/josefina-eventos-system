@@ -1,13 +1,8 @@
-"use client";
-
-import { Calendar } from "@/components/ui/calendar";
+import PublicCalendar from "@/components/calendar/PublicCalendar";
+import { Suspense } from "react";
 import Hero from "@/components/layout/Hero";
-import { useState } from "react";
-
-export const dynamic = "force-dynamic";
 
 export default function Reservations () {
-  const [date, setDate] = useState<Date | undefined>(undefined);
 
   return (
     <main>
@@ -17,12 +12,13 @@ export default function Reservations () {
         srcImg="/images/hero/2hero.jpg"
       />
       <div className="py-28">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          className="rounded-lg border [--cell-size:3rem] m-auto"
-        />
+        <Suspense
+          fallback={
+            <div className="m-auto h-96 w-96 max-w-full animate-pulse rounded-lg border" />
+          }
+        >
+          <PublicCalendar />
+        </Suspense>
       </div>
     </main>
   );
