@@ -1,7 +1,7 @@
 export interface HeroProps{
     title: string;
-    description: string;
-    src: string;
-    poster?: string;
+    description?: string;
+    srcVideo?: string;
+    srcImg: string;
     variant?: string;
 }

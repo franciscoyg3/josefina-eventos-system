@@ -116,9 +116,8 @@ export default function AboutPage() {
     <main>
       <Hero
         title="Uma receita de família, um sonho, e o lugar onde os seus momentos ganham vida."
-        description="Na Josefina Eventos, não oferecemos apenas um espaço, moldamos o cenário onde as suas histórias mais importantes ganham vida. Unimos a sofisticação clássica ao design moderno para que cada detalhe do seu evento seja nada menos que excecional."
-        src="/videos/hero-video2.mp4"
-        poster="/images/hero/1hero.jpg"
+        srcVideo="/videos/hero-video2.mp4"
+        srcImg="/images/hero/1hero.jpg"
         variant="compact"
       />
 

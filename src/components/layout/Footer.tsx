@@ -56,7 +56,7 @@ const Footer = async () => {
           {/* Contact */}
           <div id="contacts" className="space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Contacto
+              Contatos
             </h3>
             <address className="space-y-3 text-sm not-italic text-muted-foreground">
               <p>

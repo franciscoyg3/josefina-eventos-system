@@ -94,8 +94,8 @@ export default function Home() {
       <Hero
         title="Celebrações Inesquecíveis Elegância Intemporal"
         description="Descubra o refúgio ideal para os momentos mais importantes da sua vida. Um espaço desenhado com precisão arquitetónica e hospitalidade de excelência para casamentos e eventos corporativos de prestígio."
-        src="/videos/hero-video1.mp4"
-        poster="/images/hero/0hero.jpg"
+        srcVideo="/videos/hero-video1.mp4"
+        srcImg="/images/hero/0hero.jpg"
       />
       <motion.section
         variants={container}
