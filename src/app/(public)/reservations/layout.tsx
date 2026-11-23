@@ -4,6 +4,6 @@ export const metadata: Metadata = {
     title: "Reservas"
 };
 
-export default function AboutLayout({ children }: { children: React.ReactNode }) {
+export default function ReservationLayout({ children }: { children: React.ReactNode }) {
   return children;
 }

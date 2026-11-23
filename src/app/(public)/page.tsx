@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 import ServiceCard from "@/components/layout/ServiceCard";
-import Hero from "../components/layout/Hero";
+import Hero from "@/components/layout/Hero";
 import type { ServiceCardProps } from "@/types/ServiceCardPropsType";
 import {
   Carousel,
