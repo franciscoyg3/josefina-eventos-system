@@ -15,6 +15,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500"],

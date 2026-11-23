@@ -16,7 +16,10 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Josefina Eventos",
+  title: {
+    default: "Josefina Eventos - Início",
+    template: "Josefina Eventos - %s"
+  },
   description: "Salão de Eventos e Serviços",
 };
 
