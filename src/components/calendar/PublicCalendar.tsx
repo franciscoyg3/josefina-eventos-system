@@ -1,6 +1,7 @@
 "use client";
 
 import { Calendar } from "@/components/ui/calendar";
+import { pt } from "date-fns/locale";
 import { useState } from "react";
 
 export default function PublicCalendar () {
@@ -12,7 +13,8 @@ export default function PublicCalendar () {
           mode="single"
           selected={date}
           onSelect={setDate}
-          className="w-full max-w-fit m-auto rounded-lg border p-2 sm:p-4
+          locale={pt}
+          className="w-full max-w-fit m-auto rounded-lg border p-2 sm:p-4 capitalize
           [--cell-size:2.5rem] sm:[--cell-size:3rem] md:[--cell-size:4rem] lg:[--cell-size:5rem]
           **:data-[selected-single=true]:border-2
           **:data-[selected-single=true]:border-[#a68f2e]!
