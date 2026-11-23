@@ -157,7 +157,7 @@ export default function AboutPage () {
 
         <motion.div variants={item}>
           <Image
-            src="/images/about1.jpg"
+            src="/images/about/about1.jpg"
             alt="Josefina a preparar um evento no salão"
             width={600}
             height={450}
