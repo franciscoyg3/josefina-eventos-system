@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     default: "Área do Cliente",
-    template: "Área do Cliente - s%",
+    template: "Área do Cliente - %s",
   },
 };
 
