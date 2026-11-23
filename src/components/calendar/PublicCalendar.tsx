@@ -12,9 +12,16 @@ export default function PublicCalendar () {
           mode="single"
           selected={date}
           onSelect={setDate}
-          className="rounded-lg border [--cell-size:4rem] m-auto"
+          className="rounded-lg border [--cell-size:4rem] m-auto **:data-[selected-single=true]:border-2
+          **:data-[selected-single=true]:border-[#a68f2e]!
+          **:data-[selected-single=true]:bg-transparent!
+          **:data-[selected-single=true]:text-[#8a7226]!
+          **:data-[selected-single=true]:outline-none!
+          **:data-[selected-single=true]:ring-0!
+          **:data-[selected-single=true]:hover:bg-[#a68f2e]/10!"
           classNames={{
-            today: "rounded-md bg-[#a68f2e]/20 text-[#8a7226]",
+            today:
+              "rounded-md bg-[#a68f2e]/20 text-[#8a7226] data-[selected=true]:bg-transparent",
           }}
         />
       </main>
