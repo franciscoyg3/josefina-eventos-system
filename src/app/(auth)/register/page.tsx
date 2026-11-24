@@ -18,9 +18,11 @@ export default function Register() {
     <main className="grid min-h-screen md:grid-cols-2">
       <section className="flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-sm">
-          <h1 className={`${cormorant.className} text-4xl text-[#8a7226]`}>
-            Josefina Eventos
-          </h1>
+            <Link href="/">
+              <h1 className={`${cormorant.className} text-4xl text-[#8a7226]`}>
+              Josefina Eventos
+              </h1>
+            </Link>
           <p className="mt-3 text-sm leading-6 text-neutral-600">
             Crie a sua conta para consultar datas e pedir a sua reserva.
           </p>

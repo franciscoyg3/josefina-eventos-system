@@ -44,9 +44,11 @@ export default function Login() {
 
       <section className="flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-sm">
-          <h1 className={`${cormorant.className} text-4xl text-[#8a7226]`}>
-            Josefina Eventos
-          </h1>
+          <Link href="/">
+            <h1 className={`${cormorant.className} text-4xl text-[#8a7226]`}>
+              Josefina Eventos
+            </h1>
+          </Link>
           <p className="mt-3 text-sm leading-6 text-neutral-600">
             Bem-vindo de volta. Por favor, insira os seus dados de acesso.
           </p>
