@@ -1,3 +1,5 @@
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import AppSidebar from "@/components/layout/AppSidebar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,5 +10,13 @@ export const metadata: Metadata = {
 };
 
 export default function CustomerLayout ({ children }: { children: React.ReactNode }) {
-    return children
+    return (
+      <SidebarProvider>
+        <AppSidebar />
+        <main>
+          <SidebarTrigger />
+          { children }
+        </main>
+      </SidebarProvider>
+    );
 }
