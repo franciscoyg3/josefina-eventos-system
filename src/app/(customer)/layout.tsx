@@ -33,7 +33,6 @@ export default function CustomerLayout ({ children }: { children: React.ReactNod
               href="/"
               className={`${cormorant.className} flex items-center gap-2 text-xl text-[#8a7226]`}
             >
-              <span className="text-base text-[#a68f2e]">&#9670;</span>
               Josefina Eventos
             </Link>
           </header>

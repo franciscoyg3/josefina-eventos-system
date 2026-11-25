@@ -44,26 +44,6 @@ export default function AppSidebar () {
 
     return (
       <Sidebar collapsible="icon" variant="floating">
-        <SidebarHeader className="border-b border-sidebar-border px-4 py-5 group-data-[collapsible=icon]:px-2">
-          <Link
-            href="/"
-            aria-label="Josefina Eventos"
-            className="flex h-8 items-center justify-start overflow-hidden group-data-[collapsible=icon]:justify-center"
-          >
-            <span className="flex items-center gap-2 group-data-[collapsible=icon]:hidden">
-              <span
-                className={`${cormorant.className} truncate text-xl text-[#8a7226]`}
-              >
-                Josefina Eventos
-              </span>
-            </span>
-            <span
-              className={`${cormorant.className} hidden text-3xl font-medium leading-none text-[#8a7226] group-data-[collapsible=icon]:block`}
-            >
-              J
-            </span>
-          </Link>
-        </SidebarHeader>
         <SidebarContent>
           <SidebarGroup className="pt-4">
             <SidebarGroupContent>
