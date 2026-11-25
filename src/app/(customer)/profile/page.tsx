@@ -1,7 +1,7 @@
 
 export default function Profile () {
     return (
-        <main>
-        </main>
+      <div className="overflow-x-auto">
+      </div>
     );
 }
