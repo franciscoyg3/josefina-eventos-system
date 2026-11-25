@@ -3,16 +3,15 @@
 import {
   Sidebar,
   SidebarContent,
-  SidebarRail,
+  SidebarFooter,
   SidebarGroup,
-  SidebarHeader,
+  SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarGroupContent,
-  SidebarMenuItem,
   SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarRail,
   useSidebar,
-  SidebarFooter,
 } from "@/components/ui/sidebar";
 import {
   CalendarDays,
@@ -22,14 +21,8 @@ import {
   Plus,
   User,
 } from "lucide-react";
-import { Cormorant_Garamond } from "next/font/google";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import Link from "next/link";
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
 
 const items = [
   { title: "Início", href: "/", icon: Home },
@@ -38,88 +31,99 @@ const items = [
   { title: "Perfil", href: "/profile", icon: User },
 ];
 
-export default function AppSidebar () {
+const buttonBase =
+  "h-11 gap-3 [&>svg]:size-6! group-data-[collapsible=icon]:size-11! group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:gap-0 group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:[&>span]:hidden";
+
+export default function AppSidebar() {
   const pathname = usePathname();
   const { setOpenMobile } = useSidebar();
 
-    return (
-      <Sidebar collapsible="icon" variant="floating">
-        <SidebarContent>
-          <SidebarGroup className="pt-4">
-            <SidebarGroupContent>
-              <SidebarMenu>
-                <SidebarMenuItem>
+  const isActive = (href: string) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
+
+  return (
+    <Sidebar collapsible="icon" variant="floating">
+      <SidebarContent>
+        <SidebarGroup className="pt-4">
+          <SidebarGroupContent>
+            <SidebarMenu className="gap-2">
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  tooltip="Nova reserva"
+                  className={`${buttonBase} justify-center bg-[#8a7226] font-medium text-white hover:bg-[#a68f2e]! hover:text-white! active:bg-[#a68f2e]! active:text-white! group-data-[collapsible=icon]:[&>span]:hidden`}
+                  render={
+                    <Link
+                      href="/customer/availability"
+                      onClick={() => setOpenMobile(false)}
+                    />
+                  }
+                >
+                  <Plus />
+                  <span>Nova reserva</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#8a7226]/80">
+            Navegação
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="gap-2">
+              {items.map((link) => (
+                <SidebarMenuItem key={link.title}>
                   <SidebarMenuButton
-                    tooltip="Nova reserva"
-                    className="h-10 justify-center bg-[#8a7226] font-medium text-white hover:bg-[#a68f2e]! hover:text-white! active:bg-[#a68f2e]! active:text-white! group-data-[collapsible=icon]:gap-0 group-data-[collapsible=icon]:[&>span]:hidden"
+                    tooltip={link.title}
+                    isActive={isActive(link.href)}
+                    className={`${buttonBase} relative text-[15px] transition-colors duration-200 hover:bg-[#a68f2e]/10! hover:text-[#8a7226]! data-[active=true]:bg-[#a68f2e]/15! data-[active=true]:font-medium data-[active=true]:text-[#8a7226]! data-[active=true]:before:absolute data-[active=true]:before:left-0 data-[active=true]:before:h-5 data-[active=true]:before:w-0.5 data-[active=true]:before:rounded-full data-[active=true]:before:bg-[#a68f2e]`}
                     render={
                       <Link
-                        href="/customer/availability"
+                        href={link.href}
                         onClick={() => setOpenMobile(false)}
                       />
                     }
                   >
-                    <Plus />
-                    <span>Nova reserva</span>
+                    <link.icon />
+                    <span>{link.title}</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-
-          <SidebarGroup>
-            <SidebarGroupLabel>Navegação</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {items.map((link) => (
-                  <SidebarMenuItem key={link.title}>
-                    <SidebarMenuButton
-                      tooltip={link.title}
-                      isActive={pathname === link.href}
-                      className="data-[active=true]:bg-[#a68f2e]/15 data-[active=true]:text-[#8a7226]"
-                      render={
-                        <Link
-                          href={link.href}
-                          onClick={() => setOpenMobile(false)}
-                        />
-                      }
-                    >
-                      <link.icon />
-                      <span>{link.title}</span>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-
-          <SidebarFooter className="border-t border-sidebar-border">
-            <div className="flex items-center gap-3 px-2 py-2 group-data-[collapsible=icon]:hidden">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#a68f2e]/15 text-sm font-medium text-[#8a7226]">
-                CF
-              </div>
-              <div className="min-w-0">
-                <p className="truncate text-sm font-medium">Nome do cliente</p>
-                <p className="truncate text-xs text-muted-foreground">
-                  cliente@email.com
-                </p>
-              </div>
-            </div>
-
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  tooltip="Terminar sessão"
-                  className="text-muted-foreground hover:text-red-700"
-                >
-                  <LogOut />
-                  <span>Terminar sessão</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
+              ))}
             </SidebarMenu>
-          </SidebarFooter>
-        </SidebarContent>
-        <SidebarRail />
-      </Sidebar>
-    );
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+
+      <SidebarFooter className="border-t border-sidebar-border">
+        <div className="flex items-center gap-3 px-2 py-2 group-data-[collapsible=icon]:hidden">
+          <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#a68f2e]/15 text-sm font-medium text-[#8a7226]">
+            CF
+          </div>
+          <div className="min-w-0">
+            <p className="truncate text-sm font-medium">Nome do cliente</p>
+            <p className="truncate text-xs text-muted-foreground">
+              cliente@email.com
+            </p>
+          </div>
+        </div>
+
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              tooltip="Terminar sessão"
+              className={`${buttonBase} text-[15px] text-muted-foreground hover:text-red-700`}
+            >
+              <LogOut />
+              <span>Terminar sessão</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
+
+      <SidebarRail />
+    </Sidebar>
+  );
 }

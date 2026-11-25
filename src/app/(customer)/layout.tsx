@@ -23,7 +23,14 @@ export const metadata: Metadata = {
 
 export default function CustomerLayout ({ children }: { children: React.ReactNode }) {
     return (
-      <SidebarProvider>
+      <SidebarProvider
+        style={
+          {
+            "--sidebar-width": "18rem",
+            "--sidebar-width-icon": "4rem",
+          } as React.CSSProperties
+        }
+      >
         <AppSidebar />
         <SidebarInset>
           <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-3 border-b bg-background/80 px-4 backdrop-blur">
