@@ -32,10 +32,10 @@ const cormorant = Cormorant_Garamond({
 });
 
 const items = [
-  { title: "Início", href: "/customer", icon: Home },
-  { title: "Disponibilidade", href: "/customer/availability", icon: CalendarDays },
-  { title: "As minhas reservas", href: "/customer/bookings", icon: ClipboardList },
-  { title: "Perfil", href: "/customer/profile", icon: User },
+  { title: "Início", href: "/", icon: Home },
+  { title: "Disponibilidade", href: "/history", icon: CalendarDays },
+  { title: "As minhas reservas", href: "/bookings", icon: ClipboardList },
+  { title: "Perfil", href: "/profile", icon: User },
 ];
 
 export default function AppSidebar () {
@@ -47,12 +47,20 @@ export default function AppSidebar () {
         <SidebarHeader className="border-b border-sidebar-border px-4 py-5 group-data-[collapsible=icon]:px-2">
           <Link
             href="/"
-            className="flex items-center gap-2 overflow-hidden group-data-[collapsible=icon]:justify-center"
+            aria-label="Josefina Eventos"
+            className="flex h-8 items-center justify-start overflow-hidden group-data-[collapsible=icon]:justify-center"
           >
+            <span className="flex items-center gap-2 group-data-[collapsible=icon]:hidden">
+              <span
+                className={`${cormorant.className} truncate text-xl text-[#8a7226]`}
+              >
+                Josefina Eventos
+              </span>
+            </span>
             <span
-              className={`${cormorant.className} truncate text-xl text-[#8a7226] group-data-[collapsible=icon]:hidden`}
+              className={`${cormorant.className} hidden text-3xl font-medium leading-none text-[#8a7226] group-data-[collapsible=icon]:block`}
             >
-              Josefina Eventos
+              J
             </span>
           </Link>
         </SidebarHeader>
@@ -63,7 +71,7 @@ export default function AppSidebar () {
                 <SidebarMenuItem>
                   <SidebarMenuButton
                     tooltip="Nova reserva"
-                    className="h-10 justify-center bg-[#8a7226] font-medium text-white hover:bg-[#a68f2e]! hover:text-white! active:bg-[#a68f2e]! active:text-white!"
+                    className="h-10 justify-center bg-[#8a7226] font-medium text-white hover:bg-[#a68f2e]! hover:text-white! active:bg-[#a68f2e]! active:text-white! group-data-[collapsible=icon]:gap-0 group-data-[collapsible=icon]:[&>span]:hidden"
                     render={
                       <Link
                         href="/customer/availability"
