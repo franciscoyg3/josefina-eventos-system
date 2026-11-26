@@ -13,60 +13,39 @@ import {
   SidebarRail,
   useSidebar,
 } from "@/components/ui/sidebar";
-import {
-  CalendarDays,
-  ClipboardList,
-  Home,
-  LogOut,
-  Plus,
-  User,
-} from "lucide-react";
+import { LogOut } from "lucide-react";
+import { sidebarButtonBase } from "@/components/layout/sidebarStyles";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import type {
+  AppSidebarPropsType,
+  LinksType,
+} from "@/types/appSidebarPropsType";
 
-const items = [
-  { title: "Início", href: "/", icon: Home },
-  { title: "Disponibilidade", href: "/history", icon: CalendarDays },
-  { title: "As minhas reservas", href: "/bookings", icon: ClipboardList },
-  { title: "Perfil", href: "/profile", icon: User },
-];
-
-const buttonBase =
-  "h-11 gap-3 [&>svg]:size-6! group-data-[collapsible=icon]:size-11! group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:gap-0 group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:[&>span]:hidden";
-
-export default function AppSidebar() {
+export default function AppSidebar( {
+  links,
+  action
+}: AppSidebarPropsType ) {
   const pathname = usePathname();
   const { setOpenMobile } = useSidebar();
 
-  const isActive = (href: string) =>
-    href === "/"
-      ? pathname === "/"
-      : pathname === href || pathname.startsWith(`${href}/`);
+  const isActive = (link: LinksType) =>
+    link.exact
+      ? pathname === link.href
+      : pathname === link.href || pathname.startsWith(`${link.href}/`);
 
   return (
     <Sidebar collapsible="icon" variant="floating">
       <SidebarContent>
-        <SidebarGroup className="pt-4">
-          <SidebarGroupContent>
-            <SidebarMenu className="gap-2">
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  tooltip="Nova reserva"
-                  className={`${buttonBase} justify-center bg-[#8a7226] font-medium text-white hover:bg-[#a68f2e]! hover:text-white! active:bg-[#a68f2e]! active:text-white! group-data-[collapsible=icon]:[&>span]:hidden`}
-                  render={
-                    <Link
-                      href="/customer/availability"
-                      onClick={() => setOpenMobile(false)}
-                    />
-                  }
-                >
-                  <Plus />
-                  <span>Nova reserva</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        {action && (
+          <SidebarGroup className="pt-4">
+            <SidebarGroupContent>
+              <SidebarMenu>
+                <SidebarMenuItem>{action}</SidebarMenuItem>
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
 
         <SidebarGroup>
           <SidebarGroupLabel className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#8a7226]/80">
@@ -74,12 +53,12 @@ export default function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className="gap-2">
-              {items.map((link) => (
+              {links.map((link) => (
                 <SidebarMenuItem key={link.title}>
                   <SidebarMenuButton
                     tooltip={link.title}
-                    isActive={isActive(link.href)}
-                    className={`${buttonBase} relative text-[15px] transition-colors duration-200 hover:bg-[#a68f2e]/10! hover:text-[#8a7226]! data-[active=true]:bg-[#a68f2e]/15! data-[active=true]:font-medium data-[active=true]:text-[#8a7226]! data-[active=true]:before:absolute data-[active=true]:before:left-0 data-[active=true]:before:h-5 data-[active=true]:before:w-0.5 data-[active=true]:before:rounded-full data-[active=true]:before:bg-[#a68f2e]`}
+                    isActive={isActive(link)}
+                    className={`${sidebarButtonBase} relative text-[15px] transition-colors duration-200 hover:bg-[#a68f2e]/10! hover:text-[#8a7226]! data-[active=true]:bg-[#a68f2e]/15! data-[active=true]:font-medium data-[active=true]:text-[#8a7226]! data-[active=true]:before:absolute data-[active=true]:before:left-0 data-[active=true]:before:h-5 data-[active=true]:before:w-0.5 data-[active=true]:before:rounded-full data-[active=true]:before:bg-[#a68f2e]`}
                     render={
                       <Link
                         href={link.href}
@@ -87,7 +66,7 @@ export default function AppSidebar() {
                       />
                     }
                   >
-                    <link.icon />
+                    {link.icon}
                     <span>{link.title}</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -114,7 +93,7 @@ export default function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton
               tooltip="Terminar sessão"
-              className={`${buttonBase} text-[15px] text-muted-foreground hover:text-red-700`}
+              className={`${sidebarButtonBase} text-[15px] text-muted-foreground hover:text-red-700`}
             >
               <LogOut />
               <span>Terminar sessão</span>

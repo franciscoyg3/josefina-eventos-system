@@ -3,11 +3,19 @@ import {
   SidebarTrigger,
   SidebarInset,
 } from "@/components/ui/sidebar";
+import {
+  CalendarDays,
+  ClipboardList,
+  Home,
+  User,
+} from "lucide-react";
 import AppSidebar from "@/components/layout/AppSidebar";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Cormorant_Garamond } from "next/font/google";
 import { Separator } from "@/components/ui/separator";
+import type { LinksType } from "@/types/appSidebarPropsType";
+import NewBookingButton from "@/components/bookings/NewBookingButton";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -21,17 +29,25 @@ export const metadata: Metadata = {
   },
 };
 
+const customerLinks: LinksType[] = [
+  { title: "Início", href: "/", icon: <Home />, exact: true },
+  { title: "Disponibilidade", href: "/history", icon: <CalendarDays /> },
+  { title: "As minhas reservas", href: "/bookings", icon: <ClipboardList /> },
+  { title: "Perfil", href: "/profile", icon: <User /> },
+];
+
 export default function CustomerLayout ({ children }: { children: React.ReactNode }) {
     return (
       <SidebarProvider
+        defaultOpen={false}
         style={
           {
             "--sidebar-width": "18rem",
-            "--sidebar-width-icon": "4rem",
+            "--sidebar-width-icon": "3.75rem",
           } as React.CSSProperties
         }
       >
-        <AppSidebar />
+        <AppSidebar links={customerLinks} action={<NewBookingButton />} />
         <SidebarInset>
           <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-3 border-b bg-background/80 px-4 backdrop-blur">
             <SidebarTrigger className="-ml-1 text-[#8a7226] hover:bg-[#a68f2e]/10 hover:text-[#8a7226]" />
