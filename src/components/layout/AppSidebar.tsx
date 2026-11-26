@@ -82,9 +82,9 @@ export default function AppSidebar( {
             CF
           </div>
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium">Nome do cliente</p>
+            <p className="truncate text-sm font-medium">Nome do usuário</p>
             <p className="truncate text-xs text-muted-foreground">
-              cliente@email.com
+              usuario@email.com
             </p>
           </div>
         </div>
