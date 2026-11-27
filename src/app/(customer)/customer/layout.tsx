@@ -30,10 +30,23 @@ export const metadata: Metadata = {
 };
 
 const customerLinks: LinksType[] = [
-  { title: "Início", href: "/", icon: <Home />, exact: true },
-  { title: "Disponibilidade", href: "/history", icon: <CalendarDays /> },
-  { title: "As minhas reservas", href: "/bookings", icon: <ClipboardList /> },
-  { title: "Perfil", href: "/profile", icon: <User /> },
+  { title: "Início",
+    href: "/",
+    icon: <Home />,
+    exact: true },
+  {
+    title: "Calendário de Disponibilidade",
+    href: "/customer/calendar",
+    icon: <CalendarDays />,
+  },
+  {
+    title: "As minhas reservas",
+    href: "/customer/bookings",
+    icon: <ClipboardList />,
+  },
+  { title: "Perfil",
+    href: "/customer/profile",
+    icon: <User /> },
 ];
 
 export default function CustomerLayout ({ children }: { children: React.ReactNode }) {

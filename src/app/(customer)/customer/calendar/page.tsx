@@ -1,4 +1,4 @@
-export default function History () {
+export default function Calendar () {
     return (
         <main>
         </main>
