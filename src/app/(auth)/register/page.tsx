@@ -70,7 +70,7 @@ export default function Register() {
                     type="tel"
                     inputMode="tel"
                     autoComplete="tel"
-                    placeholder="9XX XXX XXX"
+                    placeholder="+244 9XXXXXXXX"
                     required
                     className={inputClass}
                   />
