@@ -21,7 +21,7 @@ const navLinks = [
     { label: "Reservas", href: "/reservations" },
 ];
 
-const Header = () => {
+export default function Header () {
     const pathname = usePathname();
 
     const isActive = (href: string) =>
@@ -139,6 +139,4 @@ const Header = () => {
         </div>
       </header>
     );
-};
-
-export default Header;
+}
