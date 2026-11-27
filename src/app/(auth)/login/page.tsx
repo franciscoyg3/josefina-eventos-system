@@ -65,7 +65,7 @@ export default function Login() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    placeholder="exemplo@email.com"
+                    placeholder="Insira o seu E-mail"
                     required
                     className={inputClass}
                   />
@@ -84,6 +84,12 @@ export default function Login() {
                     required
                     className={inputClass}
                   />
+                  <Link
+                    href="/forgot-password"
+                    className="text-xs text-[#8a7226] underline-offset-4 transition-colors hover:text-[#a68f2e] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a68f2e]"
+                  >
+                    Esqueceu a sua palavra-passe?
+                  </Link>
                 </Field>
               </FieldGroup>
             </FieldSet>
