@@ -2,7 +2,7 @@ import { Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Field, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-//import ChangePasswordDialog from "@/components/profile/ChangePasswordDialog";
+import ChangePasswordDialog from "@/components/profile/ChangePasswordDialog";
 
 const user = {
   name: "Ana Silva",
@@ -144,7 +144,7 @@ export default function Profile() {
           </p>
         </div>
 
-        {/* <ChangePasswordDialog /> */}
+        <ChangePasswordDialog />
       </section>
     </div>
   );
