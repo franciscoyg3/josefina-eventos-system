@@ -30,12 +30,10 @@ export default function Header () {
     return (
       <header className="w-full bg-background">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-          {/* Josefina Logo */}
           <Link href="/" className="font-serif text-2xl text-[#8a7226]">
             Josefina Eventos
           </Link>
 
-          {/* Navigation (desktop) */}
           <nav
             aria-label="Navegação principal"
             className="hidden items-center gap-8 md:flex"
@@ -57,7 +55,6 @@ export default function Header () {
             ))}
           </nav>
 
-          {/* Actions (desktop) */}
           <div className="hidden items-center gap-6 md:flex">
             <Link
               href="/login"
@@ -75,7 +72,6 @@ export default function Header () {
             </Button>
           </div>
 
-          {/* Menu (mobile) */}
           <Sheet>
             <SheetTrigger
               render={
