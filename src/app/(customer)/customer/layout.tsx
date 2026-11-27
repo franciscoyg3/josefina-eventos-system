@@ -35,7 +35,7 @@ const customerLinks: LinksType[] = [
     icon: <Home />,
     exact: true },
   {
-    title: "Disponibilidade",
+    title: "Calendário de Disponibilidade",
     href: "/customer/calendar",
     icon: <CalendarDays />,
   },
