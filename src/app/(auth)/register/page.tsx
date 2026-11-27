@@ -39,7 +39,7 @@ export default function Register() {
                     name="name"
                     type="text"
                     autoComplete="name"
-                    placeholder="Insira o seu nome"
+                    placeholder="Insira o seu nome completo"
                     required
                     className={inputClass}
                   />
