@@ -65,7 +65,7 @@ export default function Login() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    placeholder="Insira o seu E-mail"
+                    placeholder="Insira o seu e-mail"
                     required
                     className={inputClass}
                   />
