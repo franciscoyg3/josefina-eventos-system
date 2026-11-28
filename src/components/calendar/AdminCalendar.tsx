@@ -9,11 +9,9 @@ import {
   bookingStatusStyles,
 } from "@/components/admin/StatusBadge";
 import { formatKwanza } from "@/lib/admin/format";
-import type { AdminBooking, BookingStatus } from "@/types/adminType";
+import type { AdminBooking, BookingStatus } from "@/types/adminTypes";
 
 const weekdays = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
-
-// Só as datas que ocupam (ou podem vir a ocupar) o salão aparecem no calendário
 const visibleStatuses: BookingStatus[] = ["UNDER_REVIEW", "AWAITING_PAYMENT", "APPROVED"];
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -49,7 +47,7 @@ export default function AdminCalendar({ bookings }: { bookings: AdminBooking[] }
   }, [bookings]);
 
   const { year, month } = view;
-  const offset = (new Date(year, month, 1).getDay() + 6) % 7; // a semana começa na segunda
+  const offset = (new Date(year, month, 1).getDay() + 6) % 7;
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const cells: (number | null)[] = [
     ...Array<null>(offset).fill(null),
@@ -112,7 +110,7 @@ export default function AdminCalendar({ bookings }: { bookings: AdminBooking[] }
                 onClick={() => setSelected(key)}
                 aria-pressed={isSelected}
                 aria-label={label}
-                className={`flex min-h-20 flex-col items-start gap-1 bg-card p-1.5 text-left transition-colors hover:bg-[#a68f2e]/10 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#a68f2e] sm:min-h-24 sm:p-2 ${
+                className={`flex min-h-20 flex-col items-start gap-1 bg-card p-1.5 text-left transition-colors hover:bg-[#a68f2e]/10 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a68f2e] sm:min-h-24 sm:p-2 ${
                   isSelected ? "ring-2 ring-[#a68f2e] ring-inset" : ""
                 }`}
               >

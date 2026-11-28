@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { CalendarCheck } from "lucide-react";
-import PublicCalendar from "@/components/calendar/PublicCalendar";
+import PublicCalendar from "@/components/calendar/CustomerCalendar";
 
 const card = "rounded-xl border bg-card p-6";
 
@@ -33,7 +33,10 @@ export default function Calendar() {
             Hoje
           </li>
           <li className="flex items-center gap-2">
-            <span className="size-3 rounded-sm border-2 border-[#a68f2e]" aria-hidden />
+            <span
+              className="size-3 rounded-sm border-2 border-[#a68f2e]"
+              aria-hidden
+            />
             Selecionada
           </li>
           <li className="flex items-center gap-2">
@@ -44,12 +47,17 @@ export default function Calendar() {
       </section>
 
       <section className={`${card} flex gap-4`}>
-        <CalendarCheck className="mt-0.5 size-5 shrink-0 text-[#8a7226]" aria-hidden />
+        <CalendarCheck
+          className="mt-0.5 size-5 shrink-0 text-[#8a7226]"
+          aria-hidden
+        />
         <div>
           <h2 className="font-medium">Antes de pedir a sua reserva</h2>
           <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-muted-foreground">
             <li>As reservas exigem uma antecedência mínima de 48 horas.</li>
-            <li>Os pedidos pendentes expiram automaticamente ao fim de 24 horas.</li>
+            <li>
+              Os pedidos pendentes expiram automaticamente ao fim de 24 horas.
+            </li>
             <li>Uma data ocupada não pode ser reservada por outro cliente.</li>
           </ul>
         </div>

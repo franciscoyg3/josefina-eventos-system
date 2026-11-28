@@ -1,9 +1,8 @@
-import PublicCalendar from "@/components/calendar/PublicCalendar";
+import PublicCalendar from "@/components/calendar/CustomerCalendar";
 import { Suspense } from "react";
 import Hero from "@/components/layout/Hero";
 
-export default function Reservations () {
-
+export default function Reservations() {
   return (
     <main>
       <Hero
