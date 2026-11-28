@@ -26,13 +26,13 @@ const dayFormat = new Intl.DateTimeFormat("pt-PT", {
   timeZone: "UTC",
 });
 
-type CustomerCalendarProps = {
+type AvailabilityCalendarProps = {
   bookedDates?: string[];
 };
 
-export default function CustomerCalendar({
+export default function AvailabilityCalendar({
   bookedDates = NO_DATES,
-}: CustomerCalendarProps) {
+}: AvailabilityCalendarProps) {
   const [today] = useState(() => {
     const now = new Date();
     const min = new Date(
