@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { CalendarCheck } from "lucide-react";
-import CustomerCalendar from "@/components/calendar/CustomerCalendar";
+import AvailabilityCalendar from "@/components/calendar/AvailabilityCalendar";
 
 const card = "rounded-xl border bg-card p-6";
 
@@ -21,7 +21,7 @@ export default function Calendar() {
       </header>
 
       <Suspense fallback={<CalendarSkeleton />}>
-        <CustomerCalendar />
+        <AvailabilityCalendar mode="customer" />
       </Suspense>
 
       <section className={`${card} flex gap-4`}>
