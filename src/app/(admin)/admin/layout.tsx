@@ -4,6 +4,7 @@ import {
   SidebarInset,
 } from "@/components/ui/sidebar";
 import {
+  Home,
   CalendarDays,
   ClipboardList,
   CreditCard,
@@ -33,12 +34,8 @@ export const metadata: Metadata = {
 };
 
 const adminLinks: LinksType[] = [
-  {
-    title: "Dashboard",
-    href: "/admin/dashboard",
-    icon: <LayoutDashboard />,
-    exact: true,
-  },
+  { title: "Início", href: "/", icon: <Home /> },
+  { title: "Dashboard", href: "/admin/dashboard", icon: <LayoutDashboard />, exact: true },
   { title: "Reservas", href: "/admin/reservations", icon: <ClipboardList /> },
   { title: "Calendário", href: "/admin/calendar", icon: <CalendarDays /> },
   { title: "Pagamentos", href: "/admin/payments", icon: <CreditCard /> },
