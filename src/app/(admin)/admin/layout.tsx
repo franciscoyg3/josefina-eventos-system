@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 const customerLinks: LinksType[] = [
   { title: "Início", href: "/", icon: <Home />, exact: true },
-  { title: "Dashboard", href: "/dashboard", icon: <CalendarDays /> },
+  { title: "Dashboard", href: "/admin/dashboard", icon: <CalendarDays /> },
 ];
 
 export default function CustomerLayout ({ children }: { children: React.ReactNode }) {
