@@ -65,9 +65,11 @@ export default function AvailabilityCalendar({
   const { year, month } = view;
   const offset = (new Date(year, month, 1).getDay() + 6) % 7;
   const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const trailing = (7 - ((offset + daysInMonth) % 7)) % 7;
   const cells: (number | null)[] = [
     ...Array<null>(offset).fill(null),
     ...Array.from({ length: daysInMonth }, (_, i) => i + 1),
+    ...Array<null>(trailing).fill(null),
   ];
 
   const monthLabel = monthFormat.format(new Date(year, month, 1));
@@ -129,6 +131,13 @@ export default function AvailabilityCalendar({
           ))}
 
           {cells.map((day, index) => {
+            const cornerClass =
+              index === cells.length - 7
+                ? "rounded-bl-[inherit]"
+                : index === cells.length - 1
+                  ? "rounded-br-[inherit]"
+                  : "";
+
             if (day === null) {
               return (
                 <div
@@ -167,7 +176,7 @@ export default function AvailabilityCalendar({
                 onClick={() => setSelected(key)}
                 aria-pressed={isSelected}
                 aria-label={`Dia ${day}, ${stateLabel}`}
-                className={`flex min-h-20 flex-col items-start gap-1 p-1.5 text-left transition-colors focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a68f2e] sm:min-h-24 sm:p-2 ${stateClass} ${
+                className={`flex min-h-20 flex-col items-start gap-1 p-1.5 text-left transition-colors focus-visible:z-10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#a68f2e] sm:min-h-24 sm:p-2 ${stateClass} ${cornerClass} ${
                   isSelected ? "ring-2 ring-[#a68f2e] ring-inset" : ""
                 }`}
               >
@@ -249,10 +258,6 @@ export default function AvailabilityCalendar({
                     aria-hidden
                   />
                   Data livre
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Peça a reserva para este dia. Respondemos ao pedido em 24
-                  horas.
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">
                   {mode === "customer"
