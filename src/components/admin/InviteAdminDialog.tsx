@@ -27,10 +27,7 @@ export default function InviteAdminDialog() {
     e.preventDefault();
     const form = e.currentTarget;
     const email = String(new FormData(form).get("email")).trim();
-
-    // TODO: chamar a server action inviteAdmin(email), com requireRole("ADMIN"):
-    // gera um token de uso único com validade e envia o link por e-mail (Resend).
-    // A conta só passa a ADMIN quando o convite é aceite.
+    
     form.reset();
     setSentTo(email);
   };
