@@ -14,7 +14,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { LogOut } from "lucide-react";
-import { sidebarButtonBase } from "@/components/layout/sidebarStyles";
+import { sidebarButtonBase } from "@/lib/sidebarStyles";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import type {
