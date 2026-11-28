@@ -5,7 +5,13 @@ import {
 } from "@/components/ui/sidebar";
 import {
   CalendarDays,
-  Home,
+  ClipboardList,
+  CreditCard,
+  LayoutDashboard,
+  Settings,
+  Sparkles,
+  UserCog,
+  Users,
 } from "lucide-react";
 import AppSidebar from "@/components/layout/AppSidebar";
 import type { Metadata } from "next";
@@ -26,9 +32,20 @@ export const metadata: Metadata = {
   },
 };
 
-const customerLinks: LinksType[] = [
-  { title: "Início", href: "/", icon: <Home />, exact: true },
-  { title: "Dashboard", href: "/admin/dashboard", icon: <CalendarDays /> },
+const adminLinks: LinksType[] = [
+  {
+    title: "Dashboard",
+    href: "/admin/dashboard",
+    icon: <LayoutDashboard />,
+    exact: true,
+  },
+  { title: "Reservas", href: "/admin/reservations", icon: <ClipboardList /> },
+  { title: "Calendário", href: "/admin/calendar", icon: <CalendarDays /> },
+  { title: "Pagamentos", href: "/admin/payments", icon: <CreditCard /> },
+  { title: "Clientes", href: "/admin/customers", icon: <Users /> },
+  { title: "Serviços", href: "/admin/services", icon: <Sparkles /> },
+  { title: "Utilizadores", href: "/admin/users", icon: <UserCog /> },
+  { title: "Definições", href: "/admin/settings", icon: <Settings /> },
 ];
 
 export default function CustomerLayout ({ children }: { children: React.ReactNode }) {
@@ -42,7 +59,7 @@ export default function CustomerLayout ({ children }: { children: React.ReactNod
           } as React.CSSProperties
         }
       >
-        <AppSidebar links={customerLinks} />
+        <AppSidebar links={adminLinks} />
         <SidebarInset>
           <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-3 border-b bg-background/80 px-4 backdrop-blur">
             <SidebarTrigger className="-ml-1 text-[#8a7226] hover:bg-[#a68f2e]/10 hover:text-[#8a7226]" />
