@@ -10,7 +10,7 @@ function CalendarSkeleton() {
   );
 }
 
-export default function AvailabilityPage() {
+export default function Calendar() {
   return (
     <div className="mx-auto w-full max-w-3xl space-y-6">
       <header>
