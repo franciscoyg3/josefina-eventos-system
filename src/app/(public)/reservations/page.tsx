@@ -10,10 +10,10 @@ export default function Reservations() {
         variant="compact"
         srcImg="/images/hero/2hero.jpg"
       />
-      <div className="py-28">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <Suspense
           fallback={
-            <div className="m-auto h-96 w-96 max-w-full animate-pulse rounded-lg border" />
+            <div className="h-96 w-full animate-pulse rounded-lg border" />
           }
         >
           <AvailabilityCalendar />
