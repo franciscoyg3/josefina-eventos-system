@@ -1,9 +1,8 @@
-import PublicCalendar from "@/components/calendar/PublicCalendar";
+import CustomerCalendar from "@/components/calendar/CustomerCalendar";
 import { Suspense } from "react";
 import Hero from "@/components/layout/Hero";
 
-export default function Reservations () {
-
+export default function Reservations() {
   return (
     <main>
       <Hero
@@ -17,7 +16,7 @@ export default function Reservations () {
             <div className="m-auto h-96 w-96 max-w-full animate-pulse rounded-lg border" />
           }
         >
-          <PublicCalendar />
+          <CustomerCalendar />
         </Suspense>
       </div>
     </main>

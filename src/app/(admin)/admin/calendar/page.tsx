@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import PageHeader from "@/components/admin/PageHeader";
-import AdminCalendar from "@/components/admin/AdminCalendar";
+import AdminCalendar from "@/components/calendar/AdminCalendar";
 import { bookings } from "@/lib/admin/mockData";
 
 

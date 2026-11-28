@@ -1,4 +1,4 @@
-import type { BookingStatus, PaymentStatus } from "@/types/adminType";
+import type { BookingStatus, PaymentStatus } from "@/types/adminTypes";
 
 const badge =
   "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium whitespace-nowrap";
