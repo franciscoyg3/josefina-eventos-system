@@ -1,9 +1,6 @@
-import type { Metadata } from "next";
 import PageHeader from "@/components/admin/PageHeader";
 import CustomersTable from "@/components/admin/CustomersTable";
 import { customers } from "@/lib/admin/mockData";
-
-export const metadata: Metadata = { title: "Clientes" };
 
 export default function CustomersPage() {
   return (
