@@ -16,7 +16,7 @@ export default function Reservations() {
             <div className="h-96 w-full animate-pulse rounded-lg border" />
           }
         >
-          <AvailabilityCalendar />
+          <AvailabilityCalendar mode="public" />
         </Suspense>
       </div>
     </main>

@@ -21,7 +21,7 @@ export default function Calendar() {
       </header>
 
       <Suspense fallback={<CalendarSkeleton />}>
-        <AvailabilityCalendar />
+        <AvailabilityCalendar mode="customer" />
       </Suspense>
 
       <section className={`${card} flex gap-4`}>

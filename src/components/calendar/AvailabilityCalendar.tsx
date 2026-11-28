@@ -28,10 +28,12 @@ const dayFormat = new Intl.DateTimeFormat("pt-PT", {
 
 type AvailabilityCalendarProps = {
   bookedDates?: string[];
+  mode?: "public" | "customer";
 };
 
 export default function AvailabilityCalendar({
   bookedDates = NO_DATES,
+  mode,
 }: AvailabilityCalendarProps) {
   const [today] = useState(() => {
     const now = new Date();
