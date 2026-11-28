@@ -84,6 +84,12 @@ export default function AvailabilityCalendar({
 
   const selectedState = selected ? getState(selected) : null;
 
+  const bookingPath = `/customer/bookings/new?date=${selected}`;
+  const bookingHref =
+    mode === "customer"
+      ? bookingPath
+      : `/login?callbackUrl=${encodeURIComponent(bookingPath)}`;
+
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_20rem]">
       <section aria-label="Calendário de disponibilidade" className="space-y-4">
@@ -248,11 +254,18 @@ export default function AvailabilityCalendar({
                   Peça a reserva para este dia. Respondemos ao pedido em 24
                   horas.
                 </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {mode === "customer"
+                    ? "Peça a reserva para este dia. Respondemos ao pedido em 24 horas."
+                    : "Inicie sessão para pedir a reserva deste dia. Respondemos ao pedido em 24 horas."}
+                </p>
                 <Link
-                  href={`/customer/bookings/new?date=${selected}`}
+                  href={bookingHref}
                   className="mt-5 inline-flex h-10 w-full items-center justify-center rounded-md bg-[#8a7226] px-4 text-sm font-medium text-white transition-colors hover:bg-[#a68f2e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a68f2e]"
                 >
-                  Pedir reserva para este dia
+                  {mode === "customer"
+                    ? "Pedir reserva para este dia"
+                    : "Iniciar sessão e reservar"}
                 </Link>
               </>
             )}
