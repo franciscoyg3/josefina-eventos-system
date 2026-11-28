@@ -14,7 +14,7 @@ export default function NewBookingButton() {
       className={`${sidebarButtonBase} justify-center bg-[#8a7226] font-medium text-white hover:bg-[#a68f2e]! hover:text-white! active:bg-[#a68f2e]! active:text-white!`}
       render={
         <Link
-          href="/customer/availability"
+          href="/customer/calendar"
           onClick={() => setOpenMobile(false)}
         />
       }

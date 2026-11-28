@@ -3,6 +3,7 @@
 # Docs and planning files
 *.pdf
 *.docx
+planning.md
 
 # dependencies
 /node_modules
