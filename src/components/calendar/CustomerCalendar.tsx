@@ -4,7 +4,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { pt } from "date-fns/locale";
 import { useState } from "react";
 
-export default function PublicCalendar () {
+export default function CustomerCalendar () {
     const [date, setDate] = useState<Date | undefined>(undefined);
     
     return (
